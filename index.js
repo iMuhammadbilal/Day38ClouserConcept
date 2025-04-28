@@ -1,6 +1,7 @@
 // todoList ek closure banayenge
 function createTodoList() {
     let todos = []; // hidden private variable
+    let accessArray = 0;
 
     return {
         addTodo: function(item) {
@@ -9,7 +10,7 @@ function createTodoList() {
         },
         removeTodo: function(index) {
             if (index >= 0 && index < todos.length) {
-                const removed = todos.splice(index, 1);
+                const removed = todos.splice(2, 1);
                 console.log(`🗑️ Removed: ${removed}`);
             } else {
                 console.log("❌ Invalid index!");
@@ -24,10 +25,11 @@ function createTodoList() {
 
 // Create Todo Manager
 const myTodos = createTodoList();
-
 // Test it
 myTodos.addTodo("Learn Closures");
 myTodos.addTodo("Upload project to GitHub");
+myTodos.addTodo("Example of closures in JS");
+myTodos.addTodo("Learn about OOPS");
 myTodos.getTodos();
 myTodos.removeTodo(0);
-myTodos.getTodos();
+myTodos.getTodos(); // dot mean object
